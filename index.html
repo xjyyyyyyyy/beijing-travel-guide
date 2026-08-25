@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北京六日游景点说明书</title>
+<style>
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Noto Serif SC", "Microsoft YaHei", serif; background: #f5f3ee; color: #2c2c2a; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .hero { background: linear-gradient(135deg, #4a0404 0%, #7f1d1d 45%, #9a1c1c 100%); color: #fff; padding: 72px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; opacity: 0.25; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.15'%3E%3Cpath d='M15 35 Q15 25 25 25 Q30 20 35 25 Q45 25 45 35 Q45 40 40 40 L20 40 Q15 40 15 35Z'/%3E%3Cpath d='M50 50 Q50 42 58 42 Q62 38 66 42 Q74 42 74 50 Q74 54 70 54 L54 54 Q50 54 50 50Z'/%3E%3C/g%3E%3C/svg%3E"); background-repeat: repeat; }
+  .hero::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent, #d4a017 30%, #f0c040 50%, #d4a017 70%, transparent); }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero h1 { font-size: 34px; font-weight: 800; letter-spacing: 4px; margin-bottom: 12px; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+  .hero .sub { font-size: 15px; opacity: 0.82; margin-bottom: 20px; letter-spacing: 1px; }
+  .hero .tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .hero .tags span { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 5px 16px; border-radius: 24px; font-size: 13px; letter-spacing: 0.5px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 0 48px; }
+  .day-section { margin-top: 40px; padding: 0 20px; }
+  .day-label { display: inline-block; background: #9a1c1c; color: #fff; font-size: 13px; font-weight: 600; padding: 6px 18px; border-radius: 4px; margin-bottom: 6px; letter-spacing: 1px; }
+  .day-title { font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 24px; letter-spacing: 1px; }
+  .day-title::after { content: ""; display: block; width: 48px; height: 3px; background: linear-gradient(90deg, #d4a017, transparent); margin-top: 10px; border-radius: 2px; }
+  .card { background: #fff; border-radius: 14px; overflow: hidden; margin-bottom: 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); transition: box-shadow 0.3s, transform 0.3s; }
+  .card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .card-banner { width: 100%; height: 240px; position: relative; overflow: hidden; }
+  .card-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card-banner .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%); }
+  .card-banner span { position: absolute; bottom: 20px; left: 24px; color: #fff; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-shadow: 0 2px 12px rgba(0,0,0,0.6); z-index: 1; }
+  .card-grid .card-banner { height: 180px; }
+  .card-grid .card-banner span { font-size: 17px; bottom: 16px; left: 18px; }
+  .card-body { padding: 28px; }
+  .card-name { font-size: 21px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; letter-spacing: 0.5px; }
+  .card-en { font-size: 12px; color: #b0b0b0; margin-bottom: 14px; letter-spacing: 0.5px; }
+  .info-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .tag { font-size: 12px; padding: 4px 12px; border-radius: 4px; font-weight: 500; }
+  .tag.ticket { background: #fef3c7; color: #92400e; }
+  .tag.time { background: #dbeafe; color: #1e40af; }
+  .tag.tip { background: #dcfce7; color: #166534; }
+  .card-desc { font-size: 14px; color: #3a3a38; line-height: 1.9; margin-bottom: 14px; }
+  .card-desc p { margin-bottom: 10px; }
+  .highlights { background: linear-gradient(135deg, #fffbeb, #fef9e7); border-left: 4px solid #d4a017; padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0 4px; font-size: 13px; color: #78350f; line-height: 1.85; }
+  .highlights strong { color: #92400e; }
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .card-grid .card { margin-bottom: 0; }
+  .alt-section { background: linear-gradient(180deg, #1a1f2e 0%, #1e293b 100%); color: #e2e8f0; padding: 48px 24px; margin-top: 48px; position: relative; overflow: hidden; }
+  .alt-section .day-title { color: #f1f5f9; }
+  .alt-section .day-title::after { background: linear-gradient(90deg, #d4a017, transparent); }
+  .alt-section .day-label { background: #d4a017; color: #1e293b; }
+  .alt-card { background: #2c3a4e; border-radius: 14px; overflow: hidden; margin-bottom: 28px; border: 1px solid rgba(255,255,255,0.05); transition: border-color 0.3s; }
+  .alt-card:hover { border-color: rgba(212,160,23,0.3); }
+  .alt-banner { width: 100%; height: 200px; position: relative; overflow: hidden; }
+  .alt-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .alt-banner .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,41,59,0.3) 0%, rgba(30,41,59,0.8) 100%); }
+  .alt-banner span { position: absolute; bottom: 16px; left: 24px; color: #d4a017; font-size: 20px; font-weight: 700; letter-spacing: 3px; z-index: 1; text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+  .alt-card .body { padding: 24px; }
+  .alt-card h3 { font-size: 19px; color: #d4a017; margin-bottom: 6px; }
+  .alt-card .alt-en { font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
+  .alt-card p { font-size: 13px; color: #cbd5e1; line-height: 1.85; margin-bottom: 10px; }
+  .alt-badge { display: inline-block; background: #d4a017; color: #1e293b; font-size: 12px; font-weight: 600; padding: 3px 12px; border-radius: 4px; vertical-align: middle; }
+  .footer { text-align: center; padding: 36px 20px; background: #f5f3ee; color: #aaa; font-size: 13px; }
+  .footer p { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+  th { padding: 12px; text-align: left; border-bottom: 2px solid #d4a017; background: #faf9f6; color: #92400e; font-weight: 600; }
+  td { padding: 12px; border-bottom: 1px solid #eee; }
+  tr:hover td { background: #faf9f6; }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px; }
+    .hero h1 { font-size: 26px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .day-section { padding: 0 16px; }
+    .card-banner { height: 180px; }
+    .card-grid .card-banner { height: 160px; }
+    .card-body { padding: 20px; }
+    .alt-banner { height: 160px; }
+  }
+  @media print {
+    .card { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+    .card:hover { transform: none; box-shadow: none; }
+    .card-grid { gap: 14px; }
+  }
+
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>北京六日游 · 景点说明书</h1>
+  <div class="sub">2026年9月8日 - 9月13日 · 泰州出发 · 两位中年旅客</div>
+  <div class="tags">
+    <span>22个景点详解</span>
+    <span>6个备选替换方案</span>
+    <span>详细玩法指南</span>
+    <span>实际玩法 + 游玩内容</span>
+  </div>
+</div>
+<div class="wrap">
+
+<!-- ==================== DAY 1 ==================== -->
+<div class="day-section">
+  <div class="day-label">Day 1 · 9月8日（周二）</div>
+  <div class="day-title">抵达北京 · 前门夜游</div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/qianmen.jpg" alt="前门大街" loading="lazy"><div class="overlay"></div><span>前门大街</span></div>
+    <div class="card-body">
+      <div class="card-name">前门大街 · 大栅栏</div>
+      <div class="card-en">Qianmen Street & Dashilar</div>
+      <div class="info-row">
+        <span class="tag ticket">免费</span>
+        <span class="tag time">建议游玩 2-3h</span>
+        <span class="tag tip">傍晚至夜间最佳</span>
+      </div>
+      <div class="card-desc">
+        <p>前门大街是北京中轴线的南起点，拥有超过600年历史。明清时期就是京城最繁华的商业街，至今保留着清末民初的建筑风貌。街道两侧的老字号店铺——全聚德、瑞蚨祥、同仁堂、内联升——每一家的招牌背后都是一段百年传奇。</p>
+        <p><strong>实际玩法：</strong>从珠市口走向前门楼子方向，先逛前门大街主街（约800米步行街，有复古铛铛车），再拐入大栅栏小吃街。大栅栏是老北京小吃的聚集地，驴打滚、艾窝窝、炒肝、爆肚都能在这里找到。沿途可以进全聚德起源店、瑞蚨祥绸缎庄等老字号转转，感受百年商号的气派。走到前门楼子附近，能看到天安门广场的灯光。</p>
+        <p><strong>推荐餐饮：</strong>便宜坊烤鸭（焖炉烤鸭代表，人均120-150元）就在前门大街东侧，步行可达。也可以在大栅栏吃各种小吃，人均50-80元搞定。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 铛铛车（复古有轨电车）30元/人，坐一趟感受老北京风情；② 大栅栏的小吃街下午5点后最热闹；③ 夜晚灯光亮起后拍照效果最好，前门楼子与天安门城楼遥相呼应。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DAY 2 ==================== -->
+<div class="day-section">
+  <div class="day-label">Day 2 · 9月9日（周三）</div>
+  <div class="day-title">皇城中轴 · 天安门 · 故宫 · 景山</div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/tiananmen.jpg" alt="天安门广场" loading="lazy"><div class="overlay"></div><span>天安门广场</span></div>
+    <div class="card-body">
+      <div class="card-name">天安门广场</div>
+      <div class="card-en">Tiananmen Square</div>
+      <div class="info-row">
+        <span class="tag ticket">免费 · 需预约</span>
+        <span class="tag time">建议游览 1h</span>
+        <span class="tag tip">清晨升旗 / 傍晚降旗</span>
+      </div>
+      <div class="card-desc">
+        <p>天安门广场是世界上最大的城市中心广场，面积44万平方米，可容纳100万人。这里是中国的政治心脏，也是每一个来北京的人必到的打卡地。广场中央矗立着人民英雄纪念碑，南侧是毛主席纪念堂，东侧是国家博物馆，西侧是人民大会堂。</p>
+        <p><strong>实际玩法：</strong>从天安门东或西地铁站出来，过安检进入广场。先在广场中央拍天安门城楼正面照——这是最经典的"到此一游"角度。然后走到人民英雄纪念碑前看看浮雕，了解中国近代史。如果有时间，可以排队参观毛主席纪念堂（上午开放，需存包）。广场上经常有各地来的旅游团，可以蹭听讲解。</p>
+        <p><strong>关键提醒：</strong>广场需要单独预约！在"天安门广场参观预约"小程序上提前1-9天预约。安检严格，必须带身份证。建议早8点前抵达，避开人流高峰。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 清晨看升旗仪式（每天日出时分，时间每天不同，可查官网）；② 站在广场正中央拍天安门正面照，左右对称构图最壮观；③ 广场地面的大理石砖缝里能看到老北京的排水系统设计。
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/gugong.jpg" alt="故宫博物院" loading="lazy"><div class="overlay"></div><span>故宫博物院</span></div>
+    <div class="card-body">
+      <div class="card-name">故宫博物院</div>
+      <div class="card-en">The Palace Museum (Forbidden City)</div>
+      <div class="info-row">
+        <span class="tag ticket">60元 + 珍宝馆10元 + 钟表馆10元</span>
+        <span class="tag time">建议游览 3-4h</span>
+        <span class="tag tip">提前7天抢票</span>
+      </div>
+      <div class="card-desc">
+        <p>故宫，旧称紫禁城，是明清两代24位皇帝的居所，也是世界上现存规模最大、保存最完整的木质结构古建筑群。占地72万平方米，有9000多间房屋。走在中轴线上，从午门到神武门，每一步都踏在600年帝制历史的脉搏上。</p>
+        <p><strong>实际玩法（中轴线走法）：</strong>午门（检票入宫）→ 太和门 → 太和殿（金銮殿，皇帝登基大典礼的地方，最壮观）→ 中和殿 → 保和殿 → 乾清门 → 乾清宫（皇帝寝宫）→ 交泰殿 → 坤宁宫（皇后寝宫）→ 御花园（皇家园林，有堆秀山）→ 神武门出。这条线走下来约2小时。</p>
+        <p><strong>加游推荐：</strong>珍宝馆（宁寿宫区，看皇家珍藏金银玉器，必看！）+ 钟表馆（奉先殿，看西洋和宫廷钟表，各需30-45分钟）。如果体力允许，东六宫和西六宫（嫔妃居住区）也值得转转，《甄嬛传》的影迷会有共鸣。</p>
+        <p><strong>实用Tips：</strong>日均步行2万步起，穿最舒服的运动鞋。故宫内餐饮选择有限（冰窖餐厅、角楼咖啡），价格略高但体验不错，可以当歇脚点。从午门（南门）进，从神武门（北门）或东华门出，不可原路返回。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 太和殿前的广场，站在丹陛石前感受皇家威严；② 珍宝馆的金编钟和金天球仪是镇馆之宝；③ 御花园的连理柏（两棵长在一起的柏树）是网红打卡点；④ 角楼咖啡的"康熙最爱"巧克力文创雪糕，30元，拍照好看。
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-banner"><img src="images/jingshan.jpg" alt="景山公园" loading="lazy"><div class="overlay"></div><span>景山公园</span></div>
+      <div class="card-body">
+        <div class="card-name">景山公园</div>
+        <div class="card-en">Jingshan Park</div>
+        <div class="info-row">
+          <span class="tag ticket">2元</span>
+          <span class="tag time">1-1.5h</span>
+        </div>
+        <div class="card-desc">
+          <p>景山是元明清三代的皇家御苑，位于故宫正北。山顶的万春亭是北京旧城中轴线的最高点，也是俯瞰故宫全景的绝佳位置——没有之一。</p>
+          <p><strong>实际玩法：</strong>从故宫神武门出来，过马路就是景山公园南门。沿石阶上山，约10-15分钟登顶万春亭。亭子周围是360度观景台：南面看故宫金瓦连绵（拍故宫全景的最佳位置），北面看钟鼓楼和中轴线延长线，东西看北京城区。2元门票可能是全北京性价比最高的景点。</p>
+          <p><strong>建议时间：</strong>下午2-4点光线最好，拍故宫全景光线最佳。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-banner"><img src="images/wangfujing.jpg" alt="王府井大街" loading="lazy"><div class="overlay"></div><span>王府井大街</span></div>
+      <div class="card-body">
+        <div class="card-name">王府井大街</div>
+        <div class="card-en">Wangfujing Street</div>
+        <div class="info-row">
+          <span class="tag ticket">免费</span>
+          <span class="tag time">1.5-2h</span>
+        </div>
+        <div class="card-desc">
+          <p>王府井是北京最著名的商业街，号称"中华第一街"。700多米长的步行街上汇聚了王府井书店、百货大楼、APM商场、王府井天主教堂等地标。</p>
+          <p><strong>实际玩法：</strong>从景山公园东行或乘公交到王府井。先逛王府井书店（北京最大的书店之一），然后沿步行街南行，经过百货大楼、APM商场。路东有王府井天主教堂（东堂），建于1655年，北京四大天主堂之一，建筑很上镜。</p>
+          <p><strong>餐饮提示：</strong>王府井小吃街价格偏贵且不地道，建议正餐去四季民福烤鸭（王府井东安门店），务必提前在微信小程序远程取号！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DAY 3 ==================== -->
+<div class="day-section">
+  <div class="day-label">Day 3 · 9月10日（周四）</div>
+  <div class="day-title">长城雄关 · 八达岭 + 奥运夜景</div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/badaling.jpg" alt="八达岭长城" loading="lazy"><div class="overlay"></div><span>八达岭长城</span></div>
+    <div class="card-body">
+      <div class="card-name">八达岭长城</div>
+      <div class="card-en">Badaling Great Wall</div>
+      <div class="info-row">
+        <span class="tag ticket">40元 · 缆车套票180元</span>
+        <span class="tag time">建议游览 4-5h</span>
+        <span class="tag tip">山区比市区低3-5度</span>
+      </div>
+      <div class="card-desc">
+        <p>八达岭长城是明长城中保存最好、最具代表性的一段，也是"不到长城非好汉"这句名言的诞生地。城墙沿山脊蜿蜒，关城两翼各有南北两条线路，北线是精华段，最高点北八楼（好汉坡）海拔1015米。</p>
+        <p><strong>实际玩法：</strong>建议购买"门票+双程缆车"套票（180元/人）。缆车上山至北七楼附近，然后步行向上攀登至北八楼（好汉坡），这段约20-30分钟，坡度适中，是整个八达岭最壮阔的路段。在北八楼可以360度看到长城沿山脊向远方延伸的壮景，天气好时能看到远处的水关长城。然后沿原路或继续北行至北十二楼，缆车下山。</p>
+        <p><strong>路线选择：</strong>北线（北一楼→北八楼）是精华段，坡度适中，景色壮阔，游客也多。南线人少但较短，适合想避开人流的旅客。中年旅客推荐缆车上下，节省体力。</p>
+        <p><strong>实用Tips：</strong>长城上风大日照强，必带防晒霜、帽子、水和能量零食。穿防滑运动鞋。山区温度比市区低3-5度，带薄外套。877路回程末班车17:00，注意把握时间。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 在北八楼"好汉坡"石碑前拍照留念；② 站在城墙垛口远眺，看长城如巨龙盘踞群山之巅；③ 缆车上山时俯瞰整个关城和铁路穿山隧道，视觉冲击力极强。
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/niaochao.jpg" alt="鸟巢水立方" loading="lazy"><div class="overlay"></div><span>鸟巢水立方</span></div>
+    <div class="card-body">
+      <div class="card-name">鸟巢 · 水立方（奥林匹克公园）</div>
+      <div class="card-en">National Stadium & Aquatics Center</div>
+      <div class="info-row">
+        <span class="tag ticket">外围免费 · 入内50/30元</span>
+        <span class="tag time">建议游览 1.5-2h</span>
+        <span class="tag tip">夜间灯光最佳</span>
+      </div>
+      <div class="card-desc">
+        <p>鸟巢（国家体育场）和水立方（国家游泳中心）是2008年北京奥运会的标志性建筑，也是现代北京的象征。鸟巢由钢铁编织成"巢"形，水立方则是一个蓝色的泡泡立方体，夜晚灯光亮起时极为梦幻。</p>
+        <p><strong>实际玩法：</strong>从地铁8号线奥林匹克公园站出来，沿中轴景观大道步行。先看到鸟巢——巨大的钢结构编织而成，站在下面仰望非常震撼。继续北行到水立方，夜晚会变换蓝、紫、绿等多种灯光颜色。建议在外围拍照即可，不必购票入内。沿龙形水系走一圈，整个奥林匹克公园尺度很大，环境也很好。</p>
+        <p><strong>最佳时间：</strong>傍晚6点半以后灯光亮起，7-9点是拍照黄金时段。水立方在夜晚比白天好看十倍。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 夜间鸟巢红色灯光 + 水立方蓝色灯光交相辉映，拍倒影绝佳；② 鸟巢下方有奥运五环标志，是标准打卡点；③ 公园内的玲珑塔造型独特，值得一看。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DAY 4 ==================== -->
+<div class="day-section">
+  <div class="day-label">Day 4 · 9月11日（周五）</div>
+  <div class="day-title">皇家园林 · 颐和园 + 胡同漫步</div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/yiheyuan.jpg" alt="颐和园" loading="lazy"><div class="overlay"></div><span>颐和园</span></div>
+    <div class="card-body">
+      <div class="card-name">颐和园</div>
+      <div class="card-en">Summer Palace (Yiheyuan)</div>
+      <div class="info-row">
+        <span class="tag ticket">联票60元</span>
+        <span class="tag time">建议游览 3-4h</span>
+        <span class="tag tip">北宫门进 东宫门出</span>
+      </div>
+      <div class="card-desc">
+        <p>颐和园是清代皇家园林，以昆明湖和万寿山为基础，汲取江南园林设计手法建成，是中国现存最大的皇家园林，也是世界文化遗产。慈禧太后曾长期在此理政和生活，园中的每一处建筑都承载着晚清的历史。</p>
+        <p><strong>实际玩法（推荐路线）：</strong>北宫门进 → 苏州街（仿江南水乡商铺街，可逛15分钟）→ 翻万寿山到佛香阁（登顶俯瞰昆明湖全景，必看！）→ 排云殿（慈禧起居和处理朝政的地方）→ 长廊（728米，14000余幅彩画，世界最长画廊，慢慢看约30分钟）→ 乐寿堂（慈禧寝宫，院中有玉兰花）→ 玉澜堂（光绪帝被囚禁处）→ 仁寿殿（慈禧和光绪召见臣工的殿堂）→ 东宫门出。</p>
+        <p><strong>可选游船：</strong>在昆明湖码头坐游船（约20-30元/人），从排云殿前乘船到南湖岛，看十七孔桥和石舫（清晏舫，大理石船），省步行且视角绝佳。秋天湖面波光粼粼，远山如黛，非常美。</p>
+        <p><strong>实用Tips：</strong>建议从北宫门（4号线北宫门站D口）进，东宫门出，这样路线下坡为主，节省体力。全程约3-4小时，园区面积很大，穿舒适鞋子。9月秋高气爽，是游颐和园的最佳季节。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 佛香阁顶层俯瞰昆明湖和十七孔桥，颐和园第一观景位；② 长廊的彩画每一幅都是一个历史故事或民间传说，抬头看很有趣；③ 石舫（清晏舫）是颐和园的标志性建筑，大理石雕成船形，寓意"江山永固"；④ 苏州街仿江南水乡，在北方感受江南风情。
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-banner"><img src="images/nanluoguxiang.jpg" alt="南锣鼓巷" loading="lazy"><div class="overlay"></div><span>南锣鼓巷</span></div>
+      <div class="card-body">
+        <div class="card-name">南锣鼓巷</div>
+        <div class="card-en">Nanluoguxiang Hutong</div>
+        <div class="info-row">
+          <span class="tag ticket">免费</span>
+          <span class="tag time">1-1.5h</span>
+        </div>
+        <div class="card-desc">
+          <p>南锣鼓巷是北京最古老的胡同之一，始建于元代，至今已有700多年历史，保留了元大都"鱼骨状"胡同格局。主巷两侧分布着16条平行的小胡同，如今是北京最火爆的文创街区。</p>
+          <p><strong>实际玩法：</strong>地铁6号线南锣鼓巷站出来，沿主巷北行。两侧文创小店、咖啡馆、手工艺品店密集，适合边逛边吃边拍照。想看更原汁原味的胡同，从主巷西侧的雨儿胡同、帽儿胡同深入走，能看到四合院大门、老槐树和日常生活气息。茅盾故居就在附近。</p>
+          <p><strong>提示：</strong>商业气息较浓，周末人非常多。想买纪念品可以货比三家。周五去人流量适中。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-banner"><img src="images/shichahai.jpg" alt="什刹海" loading="lazy"><div class="overlay"></div><span>什刹海</span></div>
+      <div class="card-body">
+        <div class="card-name">什刹海（后海）</div>
+        <div class="card-en">Shichahai (Houhai)</div>
+        <div class="info-row">
+          <span class="tag ticket">免费</span>
+          <span class="tag time">1.5-2h</span>
+          <span class="tag tip">日落时分最美</span>
+        </div>
+        <div class="card-desc">
+          <p>什刹海是北京内城唯一开放的水域，由前海、后海、西海三个湖泊组成，元代曾是漕运码头。如今是北京最具老城风情的地方——湖面、胡同、王府、寺庙、酒吧街在这里奇妙融合。</p>
+          <p><strong>实际玩法：</strong>从南锣鼓巷步行约10分钟到什刹海。沿后海湖边漫步，走到银锭桥（"银锭观山"——站在桥上可遥望西山，燕京小八景之一），过桥就是烟袋斜街。湖边有很多茶馆和酒吧，找一家坐下来歇脚，看湖面波光、游船和远处的钟鼓楼，非常惬意。傍晚是什刹海最美的时段，夕阳把湖面染成金色，酒吧街灯光逐渐亮起。</p>
+          <p><strong>推荐餐饮：</strong>南门涮肉（什刹海店），老北京铜锅涮羊肉，人均100-130元。或者烤肉季（银锭桥边），老字号炙子烤肉。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DAY 5 ==================== -->
+<div class="day-section">
+  <div class="day-label">Day 5 · 9月12日（周六）</div>
+  <div class="day-title">天坛祭天 · 恭王府探秘</div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/tiantan.jpg" alt="天坛" loading="lazy"><div class="overlay"></div><span>天坛</span></div>
+    <div class="card-body">
+      <div class="card-name">天坛公园</div>
+      <div class="card-en">Temple of Heaven</div>
+      <div class="info-row">
+        <span class="tag ticket">联票35元</span>
+        <span class="tag time">建议游览 2-3h</span>
+        <span class="tag tip">东门进 南门出</span>
+      </div>
+      <div class="card-desc">
+        <p>天坛是明清两代皇帝祭天祈谷的场所，建于1420年（明永乐十八年），比故宫还早建成。这里的祈年殿是天坛的核心建筑，也是北京市的标志之一——三层蓝色琉璃瓦圆顶，全木结构不用一根铁钉，建筑工艺令人叹为观止。</p>
+        <p><strong>实际玩法（推荐路线）：</strong>东门进 → 祈年殿（必看！三层蓝瓦圆顶，站在大殿前仰望感受皇家气派。大殿内28根金丝楠木柱子对应天象，可蹭旅行团听讲解）→ 丹陛桥（连接祈年殿和皇穹宇的360米长道，中间是"神道"，左为御道、右为王道）→ 皇穹宇（回音壁就在这里！两人分别站在墙两端贴墙说话，能清晰听到对方声音，声学奇迹）→ 圜丘坛（三层汉白玉圆坛，皇帝在此祭天，站在坛中心说话有回音效果）→ 南门出。</p>
+        <p><strong>看点详解：</strong>祈年殿的蓝色琉璃瓦象征"苍天"，圆形结构象征"天圆"。圜丘坛的台面石板数全是9的倍数（9、18、27...），因为9是阳数之极。这些数字背后的讲究很有趣，建议蹭一个旅行团听讲解。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① 回音壁——必体验的声学互动，贴墙说话传声，让人惊叹古人智慧；② 祈年殿正面照——三层蓝顶在蓝天白云下极其出片；③ 圜丘坛中心——站在天心石上说话，四面回音，仿佛天地对话；④ 天坛公园里有很多晨练的北京大爷大妈，太极拳、抖空竹、唱京剧，非常接地气。
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/gongwangfu.jpg" alt="恭王府" loading="lazy"><div class="overlay"></div><span>恭王府</span></div>
+    <div class="card-body">
+      <div class="card-name">恭王府</div>
+      <div class="card-en">Prince Gong's Mansion</div>
+      <div class="info-row">
+        <span class="tag ticket">40元</span>
+        <span class="tag time">建议游览 2h</span>
+        <span class="tag tip">蹭团听讲解更精彩</span>
+      </div>
+      <div class="card-desc">
+        <p>恭王府是清代规模最大的王府，始建于乾隆年间，最初是和珅的私宅，后赐给恭亲王奕訢。民间有"一座恭王府，半部清代史"的说法——从和珅的富可敌国到奕訢的洋务运动，这里见证了清朝从鼎盛走向衰亡的全过程。</p>
+        <p><strong>实际玩法：</strong>府邸部分看银安殿（王府正殿，气派非凡）、嘉乐堂。花园部分是精华：进门看到西洋门（汉白玉石拱门，仿西洋风格，在王府中罕见），然后找秘云洞——洞中有一块康熙御笔的"福"字碑，是镇园之宝。据说这个"福"字包含了"多子、多才、多田、多寿、多福"的含义，被称为"天下第一福"。还有大戏楼（全国唯一王府戏楼，全部木结构无柱子）。</p>
+        <p><strong>强烈推荐蹭团：</strong>和珅的故事极为精彩——从穷书生到权倾天下再到赐死抄家，导游讲起来跌宕起伏。也可以提前下载"三毛游"等语音导览APP。</p>
+      </div>
+      <div class="highlights">
+        <strong>玩法亮点：</strong>① "福"字碑——康熙御笔，天下第一福，据说摸一摸能带来好运；② 西洋门——中西合璧的罕见王府建筑；③ 大戏楼——站在空旷戏楼里想象当年王府看戏场景；④ 和珅藏宝楼——据说墙壁夹层藏满金银珠宝，听故事很有意思。
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/yandai.jpg" alt="烟袋斜街" loading="lazy"><div class="overlay"></div><span>烟袋斜街</span></div>
+    <div class="card-body">
+      <div class="card-name">烟袋斜街</div>
+      <div class="card-en">Yandai Xiejie (Pipe Street)</div>
+      <div class="info-row">
+        <span class="tag ticket">免费</span>
+        <span class="tag time">约30min</span>
+      </div>
+      <div class="card-desc">
+        <p>烟袋斜街是北京最老的烟袋铺聚集地，全长232米，形成于明代。当时旗人有抽旱烟的习俗，街上开了很多烟袋铺，屋檐下挂着烟袋招牌，故名"烟袋斜街"。如今摇身一变成为文创小街，保留了胡同肌理和老铺子的门脸。</p>
+        <p><strong>实际玩法：</strong>从恭王府步行10分钟到什刹海，走过银锭桥就是烟袋斜街。短短一条街两侧是各种文创店、手作店、古玩店和咖啡馆，适合慢慢逛、随手买些小物件。走到街尾就是鼓楼，可以继续往鼓楼和钟楼方向走。整条街不长，5-10分钟就能走完，但边逛边看可以待半小时。</p>
+        <p><strong>拍照提示：</strong>街道弯曲且两侧建筑高低错落，很有老北京胡同味道，适合拍人文风格照片。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DAY 6 ==================== -->
+<div class="day-section">
+  <div class="day-label">Day 6 · 9月13日（周日）</div>
+  <div class="day-title">补充游览 · 踏上归途</div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-banner"><img src="images/yonghegong.jpg" alt="雍和宫" loading="lazy"><div class="overlay"></div><span>雍和宫</span></div>
+      <div class="card-body">
+        <div class="card-name">雍和宫</div>
+        <div class="card-en">Lama Temple (Yonghe Lamasery)</div>
+        <div class="info-row">
+          <span class="tag ticket">25元</span>
+          <span class="tag time">1-1.5h</span>
+        </div>
+        <div class="card-desc">
+          <p>雍和宫是北京最大的藏传佛教寺院，原为雍正帝即位前的亲王府邸（雍亲王府），雍正驾崩后曾在此停灵，乾隆帝出生于此，因此有"龙潜福地"之称。后改为藏传佛教格鲁派（黄教）寺庙，香火极盛，是北京人烧香拜佛的首选。</p>
+          <p><strong>实际玩法：</strong>从南向北走：雍和门 → 雍和宫殿（主殿，供三世佛）→ 永佑殿 → 法轮殿 → 万福阁（最震撼！阁内供奉一尊18米高白檀木弥勒大佛，地下8米地上18米，用一整棵尼泊尔白檀木雕成，被列入吉尼斯世界纪录）。大佛非常震撼，站在脚下仰望会感到强烈的庄严感。</p>
+          <p><strong>实用Tips：</strong>香火很旺，不用自带香，寺院免费提供三支环保香。建议早去（9点前），晚了人多。万福阁内的转经筒可以转一转。</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-banner"><img src="images/guozijian.jpg" alt="国子监" loading="lazy"><div class="overlay"></div><span>国子监</span></div>
+      <div class="card-body">
+        <div class="card-name">国子监 · 孔庙</div>
+        <div class="card-en">Imperial College & Confucian Temple</div>
+        <div class="info-row">
+          <span class="tag ticket">联票30元</span>
+          <span class="tag time">1-1.5h</span>
+        </div>
+        <div class="card-desc">
+          <p>国子监是元明清三代的最高学府和国家教育行政管理机构，相当于古代的"教育部+北大"。孔庙紧邻国子监，是元明清三朝祭祀孔子的场所。两者一墙之隔，可以连游。</p>
+          <p><strong>实际玩法：</strong>先看孔庙——大成殿是主殿，院内有198块进士题名碑（刻着元明清三代5万多名进士姓名），找找名人很有趣。然后进国子监——核心建筑是辟雍殿（皇帝讲学的地方），建于一个圆形水池中央，四面有桥，建筑独特。院内有古槐树，秋天黄叶满地很美。</p>
+          <p><strong>看点：</strong>辟雍殿的设计独一无二——四面环水，象征"教化流行"。国子监外的国子监街也是北京唯一有四座牌楼的胡同，古色古香。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-banner"><img src="images/guobo.jpg" alt="国家博物馆" loading="lazy"><div class="overlay"></div><span>国家博物馆</span></div>
+    <div class="card-body">
+      <div class="card-name">中国国家博物馆（备选方案B）</div>
+      <div class="card-en">National Museum of China</div>
+      <div class="info-row">
+        <span class="tag ticket">免费 · 需预约</span>
+        <span class="tag time">建议游览 2-3h</span>
+        <span class="tag tip">提前7天抢票</span>
+      </div>
+      <div class="card-desc">
+        <p>国家博物馆位于天安门广场东侧，是世界上单体建筑面积最大的博物馆。馆藏超过140万件，从远古石器到近现代文物，是了解中华文明的最佳窗口。如果Day 6选择国博而非雍和宫，这里是半天就能逛完中华上下五千年的地方。</p>
+        <p><strong>实际玩法：</strong>直奔"古代中国"基本陈列（地下一层），这是国博的精华。必看镇馆之宝：后母戊鼎（商代，832公斤，世界最大青铜器）、四羊方尊（商代青铜器巅峰之作）、金缕玉衣（汉代）、唐三彩。每件都值得驻足细看。如果时间有限，只看这一层的精华就值回票价（免费！）。</p>
+        <p><strong>实用Tips：</strong>提前7天在"国家博物馆"APP预约，旺季极难抢。建议选上午场（9-12点），看完出来还能吃午饭赶高铁。馆内有饮水机和休息区。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- ==================== 备选替换景点 ==================== -->
+<div class="alt-section">
+  <div class="wrap">
+    <div class="day-label" style="background:#f59e0b;color:#1e293b;">备选 · 替换方案</div>
+    <div class="day-title" style="color:#f1f5f9;">如果行程调整，这些景点可以替换或补充</div>
+    
+    <div class="alt-card">
+      <div class="alt-banner"><img src="images/yuanmingyuan.jpg" alt="圆明园" loading="lazy"><div class="overlay"></div><span>圆明园</span></div>
+      <div class="body">
+        <h3>圆明园遗址公园 <span class="alt-badge">可替换颐和园或加游</span></h3>
+        <div class="alt-en">Old Summer Palace (Yuanmingyuan)</div>
+        <p>圆明园曾是清代最大的皇家园林，被誉为"万园之园"，1860年被英法联军焚毁，如今只剩下西洋楼遗址的石柱残墙。遗址公园面积约350公顷，步行一圈需要3-4小时。</p>
+        <p><strong>实际玩法：</strong>核心看点是大水法遗址（西洋楼区）——汉白玉石柱、石龛残存于荒草中，是中国近代屈辱史最直观的见证。站在残柱前，想象当年"万园之园"的盛景与毁灭，感慨万千。此外，福海湖面、绮春园的荷花（夏天）、银杏大道（秋天）也值得看。园内有观光车可以省体力。</p>
+        <p><strong>替换建议：</strong>如果觉得颐和园人多或想换个风格，可以用圆明园替换。也可以在Day 4上午去颐和园，下午去圆明园（两园相邻，地铁4号线圆明园站）。遗址区域不大，1-2小时即可看完精华。</p>
+        <p><strong>门票：</strong>10元（大门），西洋楼遗址区15元。地铁4号线圆明园站。</p>
+      </div>
+    </div>
+    
+    <div class="alt-card">
+      <div class="alt-banner"><img src="images/guojiadajuyuan.jpg" alt="国家大剧院" loading="lazy"><div class="overlay"></div><span>国家大剧院</span></div>
+      <div class="body">
+        <h3>国家大剧院 <span class="alt-badge">可替换王府井或加游</span></h3>
+        <div class="alt-en">National Centre for the Performing Arts</div>
+        <p>国家大剧院位于天安门广场西侧，由法国建筑师保罗·安德鲁设计，外形是一个巨大的银色椭球体，俗称"巨蛋"。它坐落在人工湖中，倒影如同一颗浮在水面上的珍珠，是现代北京最具辨识度的建筑之一。</p>
+        <p><strong>实际玩法：</strong>白天看外观——银色钛金属外壳在阳光下反射天空，像一个外星飞船降在天安门旁边。夜晚更美——灯光从内部透出，整个"蛋"泛着幽蓝光芒，倒映在人工湖中。如果想入内参观，可以购票（30元参观票），走进大厅看穹顶设计，有一条水下走廊（从广场进入大剧院时走过人工湖下方）。如果碰上有演出，买张票看一场演出是最佳体验。</p>
+        <p><strong>替换建议：</strong>Day 2从故宫出来去景山之后，如果不去王府井，可以西行到国家大剧院看看外观（就在天安门西侧）。或者Day 6上午如果不去雍和宫，可以用国博+大剧院组合。</p>
+        <p><strong>门票：</strong>参观票30元。地铁1号线天安门西站。外围拍照免费。</p>
+      </div>
+    </div>
+    
+    <div class="alt-card">
+      <div class="alt-banner"><img src="images/niujie.jpg" alt="牛街" loading="lazy"><div class="overlay"></div><span>牛街</span></div>
+      <div class="body">
+        <h3>牛街美食街 <span class="alt-badge">可替换晚餐地点或加游</span></h3>
+        <div class="alt-en">Niujie Street (Muslim Food Street)</div>
+        <p>牛街是北京最古老的穆斯林聚居区，已有千年历史。这里居住着大量回族居民，牛街礼拜寺（清真寺）始建于辽代，是北京历史最悠久的清真寺。整条街是北京最地道的清真美食街，吃货必到。</p>
+        <p><strong>实际玩法：</strong>从地铁7号线广安门内站出来走到牛街。一路吃过去：聚宝源涮羊肉（老字号铜锅涮肉，人均80-100元，排队很长可以外带）、白记年糕（驴打滚、艾窝窝等传统小吃，几块钱一个）、洪记小吃店（牛肉饼、炸糕）、吐鲁番餐厅（新疆风味）。牛街礼拜寺可以进去参观，中式建筑与伊斯兰元素的融合很独特。</p>
+        <p><strong>替换建议：</strong>如果某天晚上不想在景点附近吃游客餐，可以专门来牛街吃一顿地道的清真美食。比王府井小吃街地道十倍，价格也亲民。可以替换Day 1前门晚餐或Day 5什刹海晚餐。</p>
+        <p><strong>人均：</strong>50-100元。地铁7号线广安门内站步行5分钟。</p>
+      </div>
+    </div>
+
+    <div class="alt-card">
+      <div class="alt-banner"><img src="images/mutianyu.jpg" alt="慕田峪长城" loading="lazy"><div class="overlay"></div><span>慕田峪长城</span></div>
+      <div class="body">
+        <h3>慕田峪长城 <span class="alt-badge">可替换八达岭</span></h3>
+        <div class="alt-en">Mutianyu Great Wall</div>
+        <p>慕田峪长城位于北京怀柔区，距市区约70公里，是明长城精华段之一。相比八达岭，这里游客更少、景色更秀美、坡度更缓，尤其适合中年旅客和摄影爱好者。城墙沿山脊蜿蜒约5.4公里，有22座敌楼，林木覆盖率超过90%，秋天满山红叶层林尽染。</p>
+        <p><strong>实际玩法：</strong>乘缆车上山（120元/人单程），到第14号敌楼后沿城墙向南或向北步行。南线坡度平缓，适合慢慢走边拍；北线到第20号敌楼有一段较陡的台阶。全程走完精华段约2-3小时。下山可乘缆车或滑道（旱地雪橇，60元，非常好玩！）。9月中下旬来正好赶上秋色，满山金黄火红，比八达岭壮观。</p>
+        <p><strong>替换建议：</strong>如果觉得八达岭人太多或想避开旅行团，慕田峪是最好的替代。坡度更缓更适合中年旅客，景色也更秀美。缺点是交通较远——需到东直门乘916路到怀柔换乘，或包车往返（约300-500元/车，推荐）。</p>
+        <p><strong>门票：</strong>40元 + 缆车单程120元/往返180元。包车约300-500元/车。</p>
+      </div>
+    </div>
+    
+    <div class="alt-card">
+      <div class="alt-banner"><img src="images/798.jpg" alt="798艺术区" loading="lazy"><div class="overlay"></div><span>798艺术区</span></div>
+      <div class="body">
+        <h3>798艺术区 <span class="alt-badge">可替换王府井或南锣鼓巷</span></h3>
+        <div class="alt-en">798 Art District</div>
+        <p>798艺术区原为国营718联合厂（电子元器件工厂），2000年后艺术家和画廊陆续入驻，如今是北京最具代表性的当代艺术聚集地。包豪斯风格的工业厂房与前卫艺术碰撞，形成了独特的空间美学。大大小小的画廊、艺术空间、设计店、咖啡馆散布其中。</p>
+        <p><strong>实际玩法：</strong>地铁14号线将台站出来步行10分钟。核心区在797路和798路周边，推荐重点看：UCCA尤伦斯当代艺术中心（国内顶级当代美术馆，常有大展）、798创意广场、当代唐人艺术中心。沿主路走一圈约2小时，喜欢艺术的话可以待半天。园区内有很多设计感强的咖啡馆和买手店，适合拍照打卡。</p>
+        <p><strong>替换建议：</strong>如果觉得王府井太商业化或南锣鼓巷太拥挤，可以用798替换——更有文化调性，拍照也好看。尤其适合喜欢当代艺术或设计的人。免费入园，部分展览需购票。</p>
+        <p><strong>门票：</strong>免费入园，部分展览30-80元。地铁14号线将台站步行10分钟。</p>
+      </div>
+    </div>
+    
+    <div class="alt-card">
+      <div class="alt-banner"><img src="images/beihai.jpg" alt="北海公园" loading="lazy"><div class="overlay"></div><span>北海公园</span></div>
+      <div class="body">
+        <h3>北海公园 <span class="alt-badge">可替换什刹海或加游</span></h3>
+        <div class="alt-en">Beihai Park</div>
+        <p>北海公园是现存最古老、最完整的皇家园林之一，距今已有千年历史。园内的白塔（建于1651年，藏式覆钵式塔）矗立在琼华岛山顶，是北京城的标志之一。"让我们荡起双桨"的歌曲就源自北海的湖光塔影。</p>
+        <p><strong>实际玩法：</strong>从南门进，先看白塔——登琼华岛山顶，俯瞰整个北海湖面和故宫方向。然后从北面下到湖边，坐游船到对岸（脚踏船、电瓶船，约40-80元/小时）。到北岸看九龙壁（中国三座九龙壁之一，精美绝伦）和五龙亭。全程约1.5-2小时。9月划船在湖上，看白塔倒影，非常惬意。</p>
+        <p><strong>替换建议：</strong>北海和什刹海紧邻（步行10分钟），如果想看皇家园林式水域而非民间水域，可以用北海替换什刹海。也可以两个都去，北海白天看白塔划船，什刹海傍晚看日落逛胡同。北海就在故宫西北角，从故宫神武门出来步行15分钟即到。</p>
+        <p><strong>门票：</strong>联票20元（含白塔）。游船40-80元/小时。地铁6号线北海北站。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 替换对照表 ========== -->
+<div class="wrap" style="padding-top:32px;">
+  <div class="day-section">
+    <div class="day-title">景点替换对照表</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin:12px 0;">
+      <tr style="background:#f5f4f0;">
+        <th style="padding:10px;text-align:left;border-bottom:2px solid #ddd;">原行程景点</th>
+        <th style="padding:10px;text-align:left;border-bottom:2px solid #ddd;">备选替换</th>
+        <th style="padding:10px;text-align:left;border-bottom:2px solid #ddd;">替换理由</th>
+      </tr>
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #eee;">颐和园</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">圆明园遗址</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">两园相邻可连游，或用圆明园替代以避开人流</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #eee;">王府井大街</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">国家大剧院</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">就在天安门旁，看现代建筑与拍照，省去商业街时间</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #eee;">雍和宫 + 国子监</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">国家博物馆</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">室内参观不受天气影响，看中华文明精华</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #eee;">什刹海 / 前门晚餐</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">牛街美食街</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">最地道的北京清真美食，比景区餐饮好吃且便宜</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">八达岭长城</td>
+        <td style="padding:10px;">慕田峪长城</td>
+        <td style="padding:10px;">人少景美坡度更缓，秋天红叶壮观，适合中年旅客（需包车）</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;border-bottom:1px solid #eee;">王府井 / 南锣鼓巷</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">798艺术区</td>
+        <td style="padding:10px;border-bottom:1px solid #eee;">当代艺术与工业风碰撞，拍照好看，文化调性更高</td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">什刹海</td>
+        <td style="padding:10px;">北海公园</td>
+        <td style="padding:10px;">皇家园林水域，有白塔和九龙壁，划船体验更正式</td>
+      </tr>
+    </table>
+    <div class="highlights" style="margin-top:16px;">
+      <strong>额外提醒：</strong>9月中旬北京秋高气爽，是最佳旅游季节。长城段建议备好薄外套——山区温度比市区低3-5度。故宫、国博等热门景点务必提前7天在官方小程序抢票，旺季很容易约满。
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>北京六日游景点说明书 · 2026年9月8日-13日</p>
+  <p style="margin-top:6px;opacity:0.6;">文字内容基于实际游玩经验编写 · 可直接打印分享</p>
+</div>
+
+</body>
+</html>
